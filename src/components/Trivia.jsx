@@ -12,13 +12,11 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
   const [correctAnswer] = useSound(correct);
   const [wrongAnswer] = useSound(wrong);
 
-  // useEffect(() => {
-  //   {
-  //     letsPlay();
-  //   }
-  // }, [letsPlay]);
-
-  letsPlay();
+  useEffect(() => {
+    {
+      letsPlay();
+    }
+  }, [letsPlay]);
 
   useEffect(() => {
     setQuestion(data[questionNumber - 1]);
