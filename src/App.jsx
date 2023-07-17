@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { firebaseConfig } from "../src/index";
 import "./app.css";
 import Trivia from "./components/Trivia";
 import Timer from "./components/Timer";
