@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
-import { firebaseConfig } from "../src/index";
+import React, { useEffect, useMemo, useState } from "react";
+//import firebase from "firebase/app";
+//import { firebaseConfig } from "../src/index";
 import "./app.css";
 import Trivia from "./components/Trivia";
 import Timer from "./components/Timer";
@@ -152,3 +153,27 @@ function App() {
 }
 
 export default App;
+
+// import handleSubmit from "./handles/handlesubmit";
+// import { useRef } from "react";
+
+// function App() {
+//   const dataRef = useRef();
+
+//   const submithandler = (e) => {
+//     e.preventDefault();
+//     handleSubmit(dataRef.current.value);
+//     dataRef.current.value = "";
+//   };
+
+//   return (
+//     <div className="App">
+//       <form onSubmit={submithandler}>
+//         <input type="text" ref={dataRef} />
+//         <button type="submit">Save</button>
+//       </form>
+//     </div>
+//   );
+// }
+
+// export default App;
