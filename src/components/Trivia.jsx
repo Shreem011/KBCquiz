@@ -4,8 +4,18 @@ import play from "../assets/play.mp3";
 import correct from "../assets/correct.mp3";
 import wrong from "../assets/wrong.mp3";
 
-const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
-  const [question, setQuestion] = useState(null);
+// Generate a random number between min (inclusive) and max (exclusive)
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const Trivia = ({
+  question,
+  setStop,
+  questionNumber,
+  setQuestionNumber,
+  randomNumber,
+}) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [className, setClassName] = useState("answer");
   // const [letsPlay] = useSound(play);
@@ -18,21 +28,15 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
   //   }
   // }, [letsPlay]);
 
-  // useEffect(() => {
-  //   setQuestion(data[questionNumber - 1]);
-  // }, [data, questionNumber]);
+  const presentQsn = question
+    ? question[questionNumber - 1][questionNumber][randomNumber]
+    : null;
 
-  useEffect(() => {
-    if (
-      data.length > 0 &&
-      questionNumber >= 1 &&
-      questionNumber <= data.length
-    ) {
-      setQuestion(data[questionNumber - 1]);
-    } else {
-      setStop(true);
-    }
-  }, [data, questionNumber]);
+  console.log(questionNumber);
+
+  // if (questionNumber == "6") {
+  //   setStop(true);
+  // }
 
   const delay = (duration, callback) => {
     setTimeout(() => {
@@ -48,12 +52,17 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
     );
     delay(5000, () => {
       if (a.correct) {
-        // correctAnswer();
-        delay(2000, () => {
-          setQuestionNumber((prev) => prev + 1);
-          setSelectedAnswer(null);
-        });
+        setQuestionNumber((prev) => prev + 1);
+        console.log("correct answer");
+        if (questionNumber === 5) setStop(true);
+        else {
+          // correctAnswer();
+          delay(2000, () => {
+            setSelectedAnswer(null);
+          });
+        }
       } else {
+        console.log("wrong answer");
         // wrongAnswer();
         delay(2000, () => {
           setStop(true);
@@ -64,9 +73,9 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
 
   return (
     <div className="trivia">
-      <div className="question">{question?.question}</div>
+      <div className="question">{presentQsn?.question}</div>
       <div className="answers">
-        {question?.answers.map((a) => (
+        {presentQsn?.answers.map((a) => (
           <div
             className={selectedAnswer === a ? className : "answer"}
             onClick={() => handleClick(a)}
