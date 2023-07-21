@@ -1,105 +1,117 @@
 {
     "questions": [
       {
-        "question": "1. Which keyword is used to declare a variable in JavaScript?",
-        "options": {
-          "a": "var",
-          "b": "let",
-          "c": "const",
-          "d": "string"
-        },
-        "correctAnswer": "c"
+        "id": 1,
+        "question": "Which keyword is used to declare a variable in JavaScript?",
+        "answers": [
+          {
+            "text": "var",
+            "correct": false
+          },
+          {
+            "text": "let",
+            "correct": false
+          },
+          {
+            "text": "const",
+            "correct": true
+          },
+          {
+            "text": "string",
+            "correct": false
+          }
+        ]
       },
       {
-        "question": "2. What is the output of the following JavaScript code?\n\nconst x = 10;\nfunction foo() {\n  console.log(x);\n  const x = 20;\n}\nfoo();",
-        "options": {
-          "a": "10",
-          "b": "20",
-          "c": "undefined",
-          "d": "ReferenceError"
-        },
-        "correctAnswer": "d"
+        "id": 2,
+        "question": "What is the output of the following JavaScript code?\n\nconst x = 10;\nfunction foo() {\n  console.log(x);\n  const x = 20;\n}\nfoo();",
+        "answers": [
+          {
+            "text": "10",
+            "correct": false
+          },
+          {
+            "text": "20",
+            "correct": false
+          },
+          {
+            "text": "undefined",
+            "correct": false
+          },
+          {
+            "text": "ReferenceError",
+            "correct": true
+          }
+        ]
       },
       {
-        "question": "3. In React, which method is used to update the state and trigger a re-render of the component?",
-        "options": {
-          "a": "setState",
-          "b": "updateState",
-          "c": "changeState",
-          "d": "renderState"
-        },
-        "correctAnswer": "a"
+        "id": 3,
+        "question": "In React, which method is used to update the state and trigger a re-render of the component?",
+        "answers": [
+          {
+            "text": "setState",
+            "correct": true
+          },
+          {
+            "text": "updateState",
+            "correct": false
+          },
+          {
+            "text": "changeState",
+            "correct": false
+          },
+          {
+            "text": "renderState",
+            "correct": false
+          }
+        ]
       },
       {
-        "question": "4. What is the purpose of 'key' prop in React when rendering a list of elements?",
-        "options": {
-          "a": "To specify the component's unique identifier",
-          "b": "To improve performance during rendering",
-          "c": "To maintain the order of elements in the list",
-          "d": "To prevent unnecessary re-renders"
-        },
-        "correctAnswer": "c"
+        "id": 4,
+        "question": "What is the purpose of 'key' prop in React when rendering a list of elements?",
+        "answers": [
+          {
+            "text": "To specify the component's unique identifier",
+            "correct": false
+          },
+          {
+            "text": "To improve performance during rendering",
+            "correct": false
+          },
+          {
+            "text": "To maintain the order of elements in the list",
+            "correct": true
+          },
+          {
+            "text": "To prevent unnecessary re-renders",
+            "correct": false
+          }
+        ]
       },
       {
-        "question": "5. Which JavaScript array method is used to add one or more elements to the end of an array and returns the new length of the array?",
-        "options": {
-          "a": "push()",
-          "b": "unshift()",
-          "c": "pop()",
-          "d": "shift()"
-        },
-        "correctAnswer": "a"
-      },
-      {
-        "question": "6. What does the spread operator '...' do in JavaScript?",
-        "options": {
-          "a": "Combines two strings",
-          "b": "Destructures an array",
-          "c": "Clones an array",
-          "d": "Performs exponentiation"
-        },
-        "correctAnswer": "c"
-      },
-      {
-        "question": "7. In React, what is the purpose of 'componentWillUnmount' lifecycle method?",
-        "options": {
-          "a": "To update the component's state before it unmounts",
-          "b": "To perform cleanup tasks before the component is removed from the DOM",
-          "c": "To handle errors that occur during rendering",
-          "d": "To fetch data from a server before rendering"
-        },
-        "correctAnswer": "b"
-      },
-      {
-        "question": "8. How can you prevent the default behavior of a form submission in JavaScript?",
-        "options": {
-          "a": "event.preventDefault();",
-          "b": "event.stopPropagation();",
-          "c": "event.stopImmediatePropagation();",
-          "d": "event.preventSubmission();"
-        },
-        "correctAnswer": "a"
-      },
-      {
-        "question": "9. What is the purpose of 'useEffect' hook in React?",
-        "options": {
-          "a": "To perform side effects in function components",
-          "b": "To create custom hooks",
-          "c": "To manage component state",
-          "d": "To define a component's initial state"
-        },
-        "correctAnswer": "a"
-      },
-      {
-        "question": "10. How can you declare a functional component in React?",
-        "options": {
-          "a": "class MyComponent extends React.Component { /* component code */ }",
-          "b": "function MyComponent() { /* component code */ }",
-          "c": "const MyComponent = React.functionalComponent { /* component code */ }",
-          "d": "const MyComponent = new React.Component { /* component code */ }"
-        },
-        "correctAnswer": "b"
+        "id": 5,
+        "question": "Which JavaScript array method is used to add one or more elements to the end of an array and returns the new length of the array?",
+        "answers": [
+          {
+            "text": "push()",
+            "correct": true
+          },
+          {
+            "text": "unshift()",
+            "correct": false
+          },
+          {
+            "text": "pop()",
+            "correct": false
+          },
+          {
+            "text": "shift()",
+            "correct": false
+          }
+        ]
       }
     ]
+    
+    
   }
   

@@ -8,18 +8,30 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [className, setClassName] = useState("answer");
-  const [letsPlay] = useSound(play);
-  const [correctAnswer] = useSound(correct);
-  const [wrongAnswer] = useSound(wrong);
+  // const [letsPlay] = useSound(play);
+  // const [correctAnswer] = useSound(correct);
+  // const [wrongAnswer] = useSound(wrong);
+
+  // useEffect(() => {
+  //   {
+  //     letsPlay();
+  //   }
+  // }, [letsPlay]);
+
+  // useEffect(() => {
+  //   setQuestion(data[questionNumber - 1]);
+  // }, [data, questionNumber]);
 
   useEffect(() => {
-    {
-      letsPlay();
+    if (
+      data.length > 0 &&
+      questionNumber >= 1 &&
+      questionNumber <= data.length
+    ) {
+      setQuestion(data[questionNumber - 1]);
+    } else {
+      setStop(true);
     }
-  }, [letsPlay]);
-
-  useEffect(() => {
-    setQuestion(data[questionNumber - 1]);
   }, [data, questionNumber]);
 
   const delay = (duration, callback) => {
@@ -36,13 +48,13 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
     );
     delay(5000, () => {
       if (a.correct) {
-        correctAnswer();
+        // correctAnswer();
         delay(2000, () => {
           setQuestionNumber((prev) => prev + 1);
           setSelectedAnswer(null);
         });
       } else {
-        wrongAnswer();
+        // wrongAnswer();
         delay(2000, () => {
           setStop(true);
         });
