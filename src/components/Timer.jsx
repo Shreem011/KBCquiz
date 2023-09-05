@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 const Timer = ({ setStop, questionNumber }) => {
   const [timer, setTimer] = useState(30);
 
+  // comment added
+
   useEffect(() => {
     if (timer === 0) return setStop(true);
     const interval = setInterval(() => {
